@@ -34,14 +34,13 @@ class Team(Base):
             from ndbadmin.admin import fields as admin_fields
             self.fields = [
                 admin_fields.TextField("name", "Name", required=False),
-                admin_fields.KeyField('sport', 'Sport', required=True, query=Sport.query()),
                 admin_fields.KeyField('country', 'Country', required=True, query=Country.query()),
                 admin_fields.TextField("division_name", "Division", required=True),
             ]
+            self.parent = admin_fields.KeyField('sport', 'Sport', required=True, query=Sport.query())
 
     FIELDS = {
         'name': fields.String,
-        'sport': fields.Key,
         'country': fields.Key,
         'division_name': fields.String,
     }
