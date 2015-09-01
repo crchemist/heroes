@@ -3,6 +3,7 @@ from heroes.sports.models import Sport
 from heroes.countries.models import Country
 from heroes.teams.models import Team
 from heroes.events.models import Event
+from heroes.representatives.models import Representative
 
 # Register here your models as strings
 MODELS = (
@@ -10,4 +11,5 @@ MODELS = (
     'Country',
     'Team',
     'Event',
+    'Representative',
 )
